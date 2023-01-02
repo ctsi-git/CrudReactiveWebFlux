@@ -8,8 +8,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@CrossOrigin({"*"}); //origins = "*", methods = { RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT,
-        RequestMethod.DELETE })
+@CrossOrigin({"*"}) //origins = "*", methods = { RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT, RequestMethod.DELETE })
 @RequestMapping("/api")
 public class ProductoController {
     @Autowired
