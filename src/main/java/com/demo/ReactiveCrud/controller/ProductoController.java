@@ -10,15 +10,14 @@ import reactor.core.publisher.Mono;
 @RestController
 @CrossOrigin(origins = "*", methods = { RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT,
         RequestMethod.DELETE })
-@RequestMapping("/")
+@RequestMapping("/api")
 public class ProductoController {
-
     @Autowired
     private ProductoService service;
 
 
     //Get Request - Listado de productos
-    @GetMapping
+    @GetMapping("/listado")
     public Flux<Producto> listarProductos(){
         return service.listado();
     }
@@ -30,7 +29,7 @@ public class ProductoController {
     }
 
     //Post Request - Nuevo producto
-    @PostMapping
+    @PostMapping("/nuevo")
     public Mono<Producto> nuevoProducto(@RequestBody Producto producto){
         return service.nuevoProducto(producto);
     }
